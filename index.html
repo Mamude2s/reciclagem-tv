@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Reciclagem de Televisores</title>
+
+<link rel="icon" type="image/png" href="tenna.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -19,10 +22,11 @@ scroll-behavior:smooth;
 body{
 background:#0f172a;
 color:white;
+overflow-x:hidden;
 }
 
 header{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -38,7 +42,7 @@ background-position:center;
 
 header h1{
 font-size:4rem;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 header p{
@@ -54,6 +58,11 @@ color:white;
 text-decoration:none;
 border-radius:30px;
 font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 nav{
@@ -64,12 +73,17 @@ padding:15px;
 display:flex;
 justify-content:center;
 gap:25px;
-z-index:999;
+z-index:1000;
 }
 
 nav a{
 color:white;
 text-decoration:none;
+font-weight:600;
+}
+
+nav a:hover{
+color:#22c55e;
 }
 
 section{
@@ -77,16 +91,16 @@ padding:80px 10%;
 }
 
 .section-title{
-font-size:2.3rem;
-margin-bottom:25px;
+font-size:2.5rem;
+margin-bottom:30px;
 color:#22c55e;
+text-align:center;
 }
 
 .card{
 background:#1e293b;
 padding:25px;
-border-radius:15px;
-margin-top:20px;
+border-radius:20px;
 box-shadow:0 0 20px rgba(0,0,0,.3);
 }
 
@@ -96,36 +110,95 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
-.stat{
-text-align:center;
-padding:30px;
-background:#1e293b;
-border-radius:15px;
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.stat h3{
+.stat-box{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+}
+
+.stat-box:hover{
+transform:translateY(-10px);
+}
+
+.stat-box h3{
 font-size:2rem;
 color:#22c55e;
-}
-
-ul{
-padding-left:20px;
-margin-top:10px;
-}
-
-li{
 margin-bottom:10px;
+}
+
+.timeline-item{
+background:#1e293b;
+padding:20px;
+margin-bottom:20px;
+border-left:5px solid #22c55e;
+border-radius:10px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.galeria img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+}
+
+.integrantes{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.integrante{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+text-align:center;
 }
 
 footer{
 background:#111827;
-padding:30px;
 text-align:center;
+padding:40px;
+margin-top:50px;
+}
+
+.topo{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+color:white;
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+font-size:24px;
 }
 
 .fade{
 opacity:0;
-transform:translateY(30px);
+transform:translateY(40px);
 transition:1s;
 }
 
@@ -135,10 +208,12 @@ transform:translateY(0);
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <h1>♻️ Reciclagem de Televisores</h1>
+
 <p>
 Transformando lixo eletrônico em novos recursos e protegendo o meio ambiente.
 </p>
@@ -151,70 +226,84 @@ Transformando lixo eletrônico em novos recursos e protegendo o meio ambiente.
 <a href="#beneficios">Benefícios</a>
 <a href="#captacao">Captação</a>
 <a href="#destino">Destino</a>
-<a href="#curiosidades">Curiosidades</a>
+<a href="#processo">Processo</a>
+<a href="#galeria">Galeria</a>
 </nav>
 
+<section class="stats fade">
+
+<div class="stat-box">
+<h3>♻️</h3>
+<p>Reaproveitamento de materiais</p>
+</div>
+
+<div class="stat-box">
+<h3>🌎</h3>
+<p>Proteção ambiental</p>
+</div>
+
+<div class="stat-box">
+<h3>🤝</h3>
+<p>Benefícios sociais</p>
+</div>
+
+<div class="stat-box">
+<h3>📺</h3>
+<p>Redução do lixo eletrônico</p>
+</div>
+
+</section>
+
 <section id="sobre" class="fade">
-<h2 class="section-title">O que é a reciclagem de televisores?</h2>
+
+<h2 class="section-title">O que é a reciclagem?</h2>
 
 <div class="card">
+
 <p>
-A reciclagem de televisores consiste no reaproveitamento dos materiais presentes nesses equipamentos para que retornem ao ciclo produtivo.
+A reciclagem de televisores consiste no reaproveitamento dos materiais presentes nesses aparelhos para que retornem ao ciclo produtivo.
 </p>
 
 <br>
-
-<p>
-Entre os materiais recuperados estão:
-</p>
 
 <ul>
 <li>Metais</li>
 <li>Plásticos</li>
 <li>Vidro</li>
-<li>Placas de circuito eletrônico</li>
+<li>Placas eletrônicas</li>
 </ul>
 
 <br>
 
 <p>
-O descarte incorreto pode liberar substâncias perigosas como chumbo, mercúrio, cádmio, arsênio e berílio, causando impactos à saúde humana e ao meio ambiente.
+O descarte incorreto pode liberar substâncias perigosas como chumbo, mercúrio, cádmio, arsênio e berílio.
 </p>
+
 </div>
+
 </section>
 
 <section id="beneficios" class="fade">
 
-<h2 class="section-title">Benefícios da Reciclagem</h2>
+<h2 class="section-title">Benefícios</h2>
 
 <div class="grid">
 
-<div class="stat">
-<h3>🌎</h3>
-<p>Proteção Ambiental</p>
-</div>
-
-<div class="stat">
-<h3>🩺</h3>
-<p>Redução de riscos à saúde</p>
-</div>
-
-<div class="stat">
-<h3>♻️</h3>
-<p>Reaproveitamento de materiais</p>
-</div>
-
-<div class="stat">
-<h3>🤝</h3>
-<p>Benefícios sociais e doações</p>
-</div>
-
+<div class="card">
+<h3>🌎 Meio Ambiente</h3>
+<p>Redução da poluição e da contaminação do solo.</p>
 </div>
 
 <div class="card">
-<p>
-Televisores ainda funcionais podem ser vendidos ou doados para escolas, instituições ou famílias, prolongando sua vida útil e reduzindo a geração de resíduos.
-</p>
+<h3>🩺 Saúde</h3>
+<p>Menor exposição a materiais tóxicos.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Sociedade</h3>
+<p>Possibilidade de reutilização e doações.</p>
+</div>
+
 </div>
 
 </section>
@@ -225,13 +314,9 @@ Televisores ainda funcionais podem ser vendidos ou doados para escolas, institui
 
 <div class="card">
 
-<p>
-A coleta dos televisores pode ocorrer em:
-</p>
-
 <ul>
 <li>Lojas de eletrônicos</li>
-<li>Pontos de coleta seletiva</li>
+<li>Pontos de coleta</li>
 <li>Centros de reciclagem</li>
 <li>Eventos comunitários</li>
 </ul>
@@ -239,7 +324,7 @@ A coleta dos televisores pode ocorrer em:
 <br>
 
 <p>
-Após a entrega, os aparelhos são separados e transportados para empresas especializadas, garantindo um descarte adequado.
+Após a entrega, os televisores são transportados para empresas especializadas.
 </p>
 
 </div>
@@ -252,46 +337,80 @@ Após a entrega, os aparelhos são separados e transportados para empresas espec
 
 <div class="card">
 
-<p>
-Após a desmontagem, cada material recebe um tratamento específico:
-</p>
-
 <ul>
-<li>Plásticos são triturados e transformados em novos produtos.</li>
-<li>Metais são fundidos e reutilizados.</li>
-<li>Vidros retornam ao ciclo produtivo.</li>
-<li>Placas eletrônicas passam pela recuperação de metais preciosos.</li>
+<li>Plásticos são reciclados.</li>
+<li>Metais são fundidos.</li>
+<li>Vidros são reaproveitados.</li>
+<li>Placas eletrônicas recuperam metais preciosos.</li>
 </ul>
-
-<br>
-
-<p>
-Resíduos tóxicos como chumbo e mercúrio recebem tratamento especializado para evitar contaminações ambientais.
-</p>
 
 </div>
 
 </section>
 
-<section id="curiosidades" class="fade">
+<section id="processo" class="fade">
 
-<h2 class="section-title">Curiosidades</h2>
+<h2 class="section-title">Processo de Reciclagem</h2>
 
-<div class="grid">
-
-<div class="card">
-<h3>🥇 Ouro</h3>
-<p>Placas eletrônicas podem conter pequenas quantidades de ouro.</p>
+<div class="timeline-item">
+<h3>1️⃣ Coleta</h3>
+<p>Recebimento dos televisores.</p>
 </div>
 
-<div class="card">
-<h3>🥈 Prata</h3>
-<p>A recuperação de metais reduz a necessidade de mineração.</p>
+<div class="timeline-item">
+<h3>2️⃣ Separação</h3>
+<p>Desmontagem e classificação dos materiais.</p>
 </div>
 
-<div class="card">
-<h3>📺 Reutilização</h3>
-<p>Muitos televisores ainda podem ser doados antes da reciclagem.</p>
+<div class="timeline-item">
+<h3>3️⃣ Tratamento</h3>
+<p>Descontaminação de resíduos tóxicos.</p>
+</div>
+
+<div class="timeline-item">
+<h3>4️⃣ Reaproveitamento</h3>
+<p>Retorno dos materiais ao ciclo produtivo.</p>
+</div>
+
+</section>
+
+<section id="galeria" class="fade">
+
+<h2 class="section-title">Galeria</h2>
+
+<div class="galeria">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80">
+
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+</section>
+
+<section class="fade">
+
+<h2 class="section-title">Integrantes</h2>
+
+<div class="integrantes">
+
+<div class="integrante">
+<h3>Júlia</h3>
+</div>
+
+<div class="integrante">
+<h3>Júlia Messias</h3>
+</div>
+
+<div class="integrante">
+<h3>Veronika</h3>
+</div>
+
+<div class="integrante">
+<h3>Igor</h3>
+<p>Desenvolvimento do site</p>
 </div>
 
 </div>
@@ -299,18 +418,20 @@ Resíduos tóxicos como chumbo e mercúrio recebem tratamento especializado para
 </section>
 
 <footer>
-<h3>Trabalho Escolar</h3>
-<p>Reciclagem de Televisores</p>
-<p>Grupo responsável pelo projeto</p>
+<h3>Reciclagem de Televisores</h3>
+<p>Projeto Escolar</p>
 </footer>
 
+<a href="#" class="topo">↑</a>
+
 <script>
-const elementos = document.querySelectorAll('.fade');
+const elementos=document.querySelectorAll('.fade');
 
 function aparecer(){
 elementos.forEach(el=>{
-const topo = el.getBoundingClientRect().top;
-if(topo < window.innerHeight-100){
+const topo=el.getBoundingClientRect().top;
+
+if(topo<window.innerHeight-100){
 el.classList.add('show');
 }
 });
